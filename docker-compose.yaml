@@ -1,6 +1,6 @@
 version: '3'
 
 services:
-  your-app:
+  app:
     build: .
     command: ["python3", "/app/src/main.py", "--config", "/app/config.yaml"]
