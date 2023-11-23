@@ -1,0 +1,8 @@
+telegram_token: "alalaa"
+accounts:
+  - name: "acc name"
+    username: "user"
+    password: "pass"
+allowed_chat_ids:
+  - 1123456677
+  - 1872918
