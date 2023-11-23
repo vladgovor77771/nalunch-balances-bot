@@ -40,7 +40,7 @@ class NalunchAccount:
         self.access_token = data["details"]["access_token"]
         self.refresh_token = data["details"]["refresh_token"]
 
-    def refresh_token(self):
+    def do_refresh_token(self):
         res = requests.post(
             "https://api.nalunch.me/v3/account/refresh",
             json={
@@ -68,7 +68,7 @@ class NalunchAccount:
 
     def get_balance(self) -> int:
         if datetime.now() - self.refreshed > timedelta(minutes=5):
-            self.refresh_token()
+            self.do_refresh_token()
         
         res = requests.get(
             "https://api.nalunch.me/billing",
