@@ -87,7 +87,7 @@ class NalunchAccount:
             raise Exception(f"Unable to login: code = {res.status_code}, text = {res.text}")
         
         data = res.json()
-        return int(data["compensationSum"])
+        return int(data["compensationSum"]) - int(data["spentSum"])
 
     def init(self):
         pass
