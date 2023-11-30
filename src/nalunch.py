@@ -98,6 +98,9 @@ class NalunchAccount:
     def pay(self, path: str):
         if datetime.now() - self.refreshed > timedelta(minutes=5):
             self.do_refresh_token()
+        if not path.startswith("/"):
+            path = "/" + path
+
         res = requests.put(
             f"https://api.nalunch.me{path.replace('/check', '/approve')}",
             headers={
