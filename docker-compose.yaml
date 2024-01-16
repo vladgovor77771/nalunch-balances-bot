@@ -2,5 +2,8 @@ version: '3'
 
 services:
   app:
-    build: .
+    build:
+        context: .
+        network: host
     command: ["python3", "/app/src/main.py", "--config", "/app/config.yaml"]
+    network_mode: "host"
