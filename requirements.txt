@@ -3,3 +3,4 @@ python-telegram-bot
 requests
 qreader
 opencv-python
+zxingcpp

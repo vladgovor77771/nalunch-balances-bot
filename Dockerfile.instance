@@ -1,0 +1,5 @@
+FROM nalunch:latest
+
+COPY config.yaml /app/config.yaml
+
+CMD ["python3", "/app/src/main.py", "--config", "/app/config.yaml"]

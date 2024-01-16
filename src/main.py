@@ -2,7 +2,7 @@ import argparse
 
 from config import parse_config
 from nalunch import NalunchAccount
-from tg import TgBot
+from tg import NalunchTelegramBot
 
 
 def parse_arguments():
@@ -20,7 +20,7 @@ if __name__ == '__main__':
         acc.login()
         accounts.append(acc)
     
-    bot = TgBot(config.telegram_token, config.allowed_chat_ids, accounts)
+    bot = NalunchTelegramBot(config.telegram_token, config.allowed_chat_ids, accounts, config.known_vending_devices)
 
     print("starting")
     bot.run()
