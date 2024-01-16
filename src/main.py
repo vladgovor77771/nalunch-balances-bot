@@ -17,8 +17,12 @@ if __name__ == '__main__':
     accounts = []
     for account in config.accounts:
         acc = NalunchAccount(account)
-        acc.login()
-        accounts.append(acc)
+        try:
+            acc.login()
+            accounts.append(acc)
+        except Exception as e:
+            print(account, e)
+            raise e
     
     bot = NalunchTelegramBot(config.telegram_token, config.allowed_chat_ids, accounts, config.known_vending_devices)
 
