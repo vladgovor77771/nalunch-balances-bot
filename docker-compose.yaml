@@ -5,5 +5,7 @@ services:
     build:
         context: .
         network: host
+    volumes:
+      - ./config.yaml:/app/config.yaml
     command: ["python3", "/app/src/main.py", "--config", "/app/config.yaml"]
     network_mode: "host"

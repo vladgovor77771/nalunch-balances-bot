@@ -6,3 +6,6 @@ accounts:
 allowed_chat_ids:
   - 1123456677
   - 1872918
+known_vending_devices:
+  - id: 123
+    name: "Vending device 1"
