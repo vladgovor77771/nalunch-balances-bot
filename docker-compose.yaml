@@ -2,9 +2,10 @@ version: '3'
 
 services:
   app:
-    build:
-        context: .
-        network: host
+    image: vladgovor77771/nalunch-bot:latest
+    # build:
+    #     context: .
+    #     network: host
     volumes:
       - ./config.yaml:/app/config.yaml
     command: ["python3", "/app/src/main.py", "--config", "/app/config.yaml"]
